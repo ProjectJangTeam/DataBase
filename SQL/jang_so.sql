@@ -1,0 +1,5 @@
+INSERT INTO jangdb.jang_so (PLNO, PLNAME, QCALL, POSTNO, BASICAD, DETAILAD, WIDO, KDO) VALUES (1, 'BITCAMP', '02-1588-7776', 6134, 'Gangnam-gu, Seoul, Republic of Korea', '20, Gangnam-daero 94-gil', '38.439801', '127.127730');
+INSERT INTO jangdb.jang_so (PLNO, PLNAME, QCALL, POSTNO, BASICAD, DETAILAD, WIDO, KDO) VALUES (2, 'CAFE', '02-2233-3333', 6234, 'Gangnam-gu, Seoul, Republic of Korea', '20, Gangnam-daero 15', '39.439801', '128.127730');
+INSERT INTO jangdb.jang_so (PLNO, PLNAME, QCALL, POSTNO, BASICAD, DETAILAD, WIDO, KDO) VALUES (3, '전시장소1', '111-222-11', 6234, 'Gangnam-gu, Seoul, Republic of Korea', '20, Gangnam-daero 16', '44.2', '123.222');
+INSERT INTO jangdb.jang_so (PLNO, PLNAME, QCALL, POSTNO, BASICAD, DETAILAD, WIDO, KDO) VALUES (4, '전시장소2', '111-222-12', 6234, 'Gangnam-gu, Seoul, Republic of Korea', '20, Gangnam-daero 17', '44.33', '123.22');
+INSERT INTO jangdb.jang_so (PLNO, PLNAME, QCALL, POSTNO, BASICAD, DETAILAD, WIDO, KDO) VALUES (5, '전시장소3', '1120220222', 2344, 'Gangnam-gu, Seoul, Republic of Korea', '20, Gangnam-daero 15', '33.22', '123.34');
