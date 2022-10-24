@@ -59,11 +59,11 @@ INSERT INTO jangdb.jang_exhibition (EXNO, EXNAME, CONT, WDATE, PLNO, STDATE, EDD
 INSERT INTO jangdb.jang_exhibition (EXNO, EXNAME, CONT, WDATE, PLNO, STDATE, EDDATE, PRICE) VALUES (5, '전시제목5', '전시내용5', '2022-10-12', 4, '2022-10-12', '2022-10-12', 15000);
 
 -- jang_exhibition_file
-INSERT INTO jangdb.jang_exhibition_file (EXFNO, PATH, EXNO) VALUES (1, '전시파일경로1', 1);
-INSERT INTO jangdb.jang_exhibition_file (EXFNO, PATH, EXNO) VALUES (2, '전시파일경로2', 2);
-INSERT INTO jangdb.jang_exhibition_file (EXFNO, PATH, EXNO) VALUES (3, '전시파일경로3', 3);
-INSERT INTO jangdb.jang_exhibition_file (EXFNO, PATH, EXNO) VALUES (4, '전시파일경로4', 4);
-INSERT INTO jangdb.jang_exhibition_file (EXFNO, PATH, EXNO) VALUES (5, '전시파일경로5', 5);
+INSERT INTO jangdb.jang_exhibition_file (EXFNO, PATH, EXNO, FNAME) VALUES (1, '전시파일경로1', 1, '파일1');
+INSERT INTO jangdb.jang_exhibition_file (EXFNO, PATH, EXNO, FNAME) VALUES (2, '전시파일경로2', 2, '파일2');
+INSERT INTO jangdb.jang_exhibition_file (EXFNO, PATH, EXNO, FNAME) VALUES (3, '전시파일경로3', 3, '파일3');
+INSERT INTO jangdb.jang_exhibition_file (EXFNO, PATH, EXNO, FNAME) VALUES (4, '전시파일경로4', 4, '파일4');
+INSERT INTO jangdb.jang_exhibition_file (EXFNO, PATH, EXNO, FNAME) VALUES (5, '전시파일경로5', 5, '파일5');
 
 -- jang_exhibition_review
 INSERT INTO jangdb.jang_exhibition_review (RVNO, CONT, WDATE, ID, EXNO) VALUES (1, '감동적인 전시회였습니다.', '2022-10-06', 'user1', 1);
@@ -108,22 +108,22 @@ INSERT INTO jangdb.jang_so_review (PRVNO, CONT, RECONO, PLNO) VALUES (4, '강원
 INSERT INTO jangdb.jang_so_review (PRVNO, CONT, RECONO, PLNO) VALUES (5, '화암 동굴로 향하는 모노레일을 탑승하고 정상으로 올랐다. 참고로 모노레일과 입장권을 예약할 때 할인되는 항목이 있다면 꼼꼼하게 챙기시길! 모이면 생각보다 꽤 많은 금액이 세이브되곤 한다.', 5, 3);
 
 -- jang_so_review_file
-INSERT INTO jangdb.jang_so_review_file (RECOFNO, PRVNO, PATH) VALUES (1, 1, '../review_file/file1_1');
-INSERT INTO jangdb.jang_so_review_file (RECOFNO, PRVNO, PATH) VALUES (2, 1, '../review_file/file1_2');
-INSERT INTO jangdb.jang_so_review_file (RECOFNO, PRVNO, PATH) VALUES (3, 2, '../review_file/file2_1');
-INSERT INTO jangdb.jang_so_review_file (RECOFNO, PRVNO, PATH) VALUES (4, 2, '../review_file/file2_2');
-INSERT INTO jangdb.jang_so_review_file (RECOFNO, PRVNO, PATH) VALUES (5, 3, '../review_file/file3_1');
-INSERT INTO jangdb.jang_so_review_file (RECOFNO, PRVNO, PATH) VALUES (6, 4, '../review_file/file4_1');
-INSERT INTO jangdb.jang_so_review_file (RECOFNO, PRVNO, PATH) VALUES (7, 5, '../review_file/file5_1');
-INSERT INTO jangdb.jang_so_review_file (RECOFNO, PRVNO, PATH) VALUES (8, 5, '../review_file/file5_2');
+INSERT INTO jangdb.jang_so_review_file (RECOFNO, PRVNO, PATH, FNAME) VALUES (1, 1, '../review_file/file1_1', '파일6');
+INSERT INTO jangdb.jang_so_review_file (RECOFNO, PRVNO, PATH, FNAME) VALUES (2, 1, '../review_file/file1_2', '파일7');
+INSERT INTO jangdb.jang_so_review_file (RECOFNO, PRVNO, PATH, FNAME) VALUES (3, 2, '../review_file/file2_1', '파일8');
+INSERT INTO jangdb.jang_so_review_file (RECOFNO, PRVNO, PATH, FNAME) VALUES (4, 2, '../review_file/file2_2', '파일9');
+INSERT INTO jangdb.jang_so_review_file (RECOFNO, PRVNO, PATH, FNAME) VALUES (5, 3, '../review_file/file3_1', '파일10');
+INSERT INTO jangdb.jang_so_review_file (RECOFNO, PRVNO, PATH, FNAME) VALUES (6, 4, '../review_file/file4_1', '파일11');
+INSERT INTO jangdb.jang_so_review_file (RECOFNO, PRVNO, PATH, FNAME) VALUES (7, 5, '../review_file/file5_1', '파일12');
+INSERT INTO jangdb.jang_so_review_file (RECOFNO, PRVNO, PATH, FNAME) VALUES (8, 5, '../review_file/file5_2', '파일13');
 
 -- jang_ticket
-INSERT INTO jangdb.jang_ticket (EXTKNO, ID, EXNO, CNT, PURDATE, PAYMENT, CCDATE) VALUES (1, 'user1', 1, 2, '2022-10-10', 'CASH', '2022-10-11');
+INSERT INTO jangdb.jang_ticket (EXTKNO, ID, EXNO, CNT, PURDATE, PAYMENT, CCDATE, CRDATE) VALUES (1, 'user1', 1, 2, '2022-10-10', 'CASH', '2022-10-11', '2022-10-08');
 INSERT INTO jangdb.jang_ticket (EXTKNO, ID, EXNO, CNT, PURDATE, PAYMENT, CCDATE) VALUES (2, 'user1', 1, 2, '2022-10-11', 'CREDIT_CARD', null);
 INSERT INTO jangdb.jang_ticket (EXTKNO, ID, EXNO, CNT, PURDATE, PAYMENT, CCDATE) VALUES (3, 'user2', 2, 1, '2022-10-09', 'CREDIT_CARD', null);
 INSERT INTO jangdb.jang_ticket (EXTKNO, ID, EXNO, CNT, PURDATE, PAYMENT, CCDATE) VALUES (4, 'user3', 2, 3, '2022-10-10', 'CREDIT_CARD', null);
 INSERT INTO jangdb.jang_ticket (EXTKNO, ID, EXNO, CNT, PURDATE, PAYMENT, CCDATE) VALUES (5, 'user4', 3, 1, '2022-10-11', 'KAKAO_PAY', null);
-INSERT INTO jangdb.jang_ticket (EXTKNO, ID, EXNO, CNT, PURDATE, PAYMENT, CCDATE) VALUES (6, 'user5', 4, 2, '2022-10-11', 'CASH', '2022-10-11');
+INSERT INTO jangdb.jang_ticket (EXTKNO, ID, EXNO, CNT, PURDATE, PAYMENT, CCDATE, CRDATE) VALUES (6, 'user5', 4, 2, '2022-10-11', 'CASH', '2022-10-11', '2022-09-11');
 
 -- jang_comment
 INSERT INTO jangdb.jang_comment (CMNO, RECONO, ID, CONT, WDATE) VALUES (1, 1, 'user1', '내용1', '2022-10-11');
