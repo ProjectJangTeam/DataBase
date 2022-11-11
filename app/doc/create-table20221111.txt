@@ -67,6 +67,9 @@ DROP TABLE IF EXISTS jang_item RESTRICT;
 -- 이벤트
 DROP TABLE IF EXISTS jang_event RESTRICT;
 
+-- 이동수단테이블(삭제된 테이블)
+DROP TABLE IF EXISTS jang_transportation RESTRICT;
+
 -- 전시회한줄리뷰
 CREATE TABLE jang_exhibition_review (
   RVNO  INTEGER     NOT NULL COMMENT '리뷰번호', -- 리뷰번호
@@ -111,7 +114,7 @@ ALTER TABLE jang_alarm
 CREATE TABLE jang_qna (
   QNANO   INTEGER      NOT NULL COMMENT 'QnA번호', -- QnA번호
   ID      VARCHAR(50)  NOT NULL COMMENT '아이디', -- 아이디
-  PBL     BOOLEAN      NULL     COMMENT '공개여부', -- 공개여부
+  PBL     BOOLEAN      NOT NULL COMMENT '공개여부', -- 공개여부
   TITLE   VARCHAR(255) NOT NULL COMMENT '제목', -- 제목
   CONT    MEDIUMTEXT   NOT NULL COMMENT '내용', -- 내용
   WDATE   DATE         NOT NULL DEFAULT curdate() COMMENT '작성일', -- 작성일
@@ -257,7 +260,8 @@ CREATE TABLE jang_notice (
   NTNO  INTEGER      NOT NULL COMMENT '공지사항번호', -- 공지사항번호
   TITLE VARCHAR(255) NOT NULL COMMENT '제목', -- 제목
   CONT  MEDIUMTEXT   NOT NULL COMMENT '내용', -- 내용
-  WDATE DATE         NOT NULL DEFAULT curdate() COMMENT '작성일' -- 작성일
+  WDATE DATE         NOT NULL DEFAULT curdate() COMMENT '작성일', -- 작성일
+  VCNT  INTEGER      NOT NULL COMMENT '조회수' -- 조회수
 )
 COMMENT '공지사항';
 
@@ -510,7 +514,7 @@ ALTER TABLE jang_event_file
 
 -- 이벤트참여
 CREATE TABLE jang_join (
-  COL   INTEGER     NOT NULL COMMENT '이벤트참여번호', -- 이벤트참여번호
+  JOINO INTEGER     NOT NULL COMMENT '이벤트참여번호', -- 이벤트참여번호
   EVTNO INTEGER     NOT NULL COMMENT '이벤트번호', -- 이벤트번호
   ID    VARCHAR(50) NOT NULL COMMENT '아이디', -- 아이디
   WIN   BOOLEAN     NOT NULL COMMENT '당첨여부' -- 당첨여부
@@ -521,11 +525,11 @@ COMMENT '이벤트참여';
 ALTER TABLE jang_join
   ADD CONSTRAINT PK_jang_join -- 이벤트참여 기본키
     PRIMARY KEY (
-      COL -- 이벤트참여번호
+      JOINO -- 이벤트참여번호
     );
 
 ALTER TABLE jang_join
-  MODIFY COLUMN COL INTEGER NOT NULL AUTO_INCREMENT COMMENT '이벤트참여번호';
+  MODIFY COLUMN JOINO INTEGER NOT NULL AUTO_INCREMENT COMMENT '이벤트참여번호';
 
 -- 이벤트상품
 CREATE TABLE jang_item (
@@ -561,7 +565,7 @@ CREATE TABLE jang_event (
   CONT   MEDIUMTEXT   NOT NULL COMMENT '내용', -- 내용
   STDATE DATETIME     NOT NULL COMMENT '시작일', -- 시작일
   EDDATE DATETIME     NOT NULL COMMENT '종료일', -- 종료일
-  PBL    BOOLEAN      NULL     COMMENT '공개여부', -- 공개여부
+  PBL    BOOLEAN      NOT NULL COMMENT '공개여부', -- 공개여부
   EVCODE VARCHAR(255) NOT NULL COMMENT '구분코드', -- 구분코드
   ECOUNT INTEGER      NOT NULL COMMENT '인원', -- 인원
   WDATE  DATE         NOT NULL COMMENT '작성일', -- 작성일

@@ -73,11 +73,11 @@ INSERT INTO jangdb.jang_baguni (ID, EXNO, CNT, ACT) VALUES ('user3', 1, 2, 1);
 INSERT INTO jangdb.jang_baguni (ID, EXNO, CNT, ACT) VALUES ('user3', 2, 1, 1);
 
 -- jang_notice
-INSERT INTO jangdb.jang_notice (NTNO, TITLE, CONT, WDATE) VALUES (1, '제목1', '내용1', '2022-09-09');
-INSERT INTO jangdb.jang_notice (NTNO, TITLE, CONT, WDATE) VALUES (2, '제목2', '내용2', '2022-10-01');
-INSERT INTO jangdb.jang_notice (NTNO, TITLE, CONT, WDATE) VALUES (3, '제목3', '내용3', '2022-10-05');
-INSERT INTO jangdb.jang_notice (NTNO, TITLE, CONT, WDATE) VALUES (4, '제목4', '내용4', '2022-10-07');
-INSERT INTO jangdb.jang_notice (NTNO, TITLE, CONT, WDATE) VALUES (5, '제목5', '내용5', '2022-10-10');
+INSERT INTO jangdb.jang_notice (NTNO, TITLE, CONT, WDATE, VCNT) VALUES (1, '제목1', '내용1', '2022-09-09', 0);
+INSERT INTO jangdb.jang_notice (NTNO, TITLE, CONT, WDATE, VCNT) VALUES (2, '제목2', '내용2', '2022-10-01', 0);
+INSERT INTO jangdb.jang_notice (NTNO, TITLE, CONT, WDATE, VCNT) VALUES (3, '제목3', '내용3', '2022-10-05', 0);
+INSERT INTO jangdb.jang_notice (NTNO, TITLE, CONT, WDATE, VCNT) VALUES (4, '제목4', '내용4', '2022-10-07', 0);
+INSERT INTO jangdb.jang_notice (NTNO, TITLE, CONT, WDATE, VCNT) VALUES (5, '제목5', '내용5', '2022-10-10', 0);
 
 -- jang_qna
 INSERT INTO jangdb.jang_qna (QNANO, ID, PBL, TITLE, CONT, WDATE, ANSCONT, ANSDATE) VALUES (1, 'user1', 0, '제목1', '내용1', '2022-09-09', '', null);
@@ -140,3 +140,33 @@ INSERT INTO jangdb.jang_report (RPNO, RECONO, ID, RSN, RST, RSTDATE) VALUES (2, 
 INSERT INTO jangdb.jang_report (RPNO, RECONO, ID, RSN, RST, RSTDATE) VALUES (3, 2, 'user1', '사유1', '처리내용11', '2022-10-11');
 INSERT INTO jangdb.jang_report (RPNO, RECONO, ID, RSN, RST, RSTDATE) VALUES (4, 3, 'user1', '사유11', '처리내용11', '2022-10-11');
 INSERT INTO jangdb.jang_report (RPNO, RECONO, ID, RSN, RST, RSTDATE) VALUES (5, 2, 'user1', '사유1', '처리내용11', '2022-10-11');
+
+-- jang_event
+INSERT INTO jangdb.jang_event (TITLE, CONT, STDATE, EDDATE, PBL, EVCODE, ECOUNT, WDATE, VCNT) VALUES ('이벤트제목1', '이벤트내용1', '2022-01-01 00:00:01', '2022-02-01 23:59:59', 1, '선착순', 10, '2021-12-20', 0);
+INSERT INTO jangdb.jang_event (TITLE, CONT, STDATE, EDDATE, PBL, EVCODE, ECOUNT, WDATE, VCNT) VALUES ('이벤트제목2', '이벤트내용2', '2022-03-01 00:00:01', '2022-04-01 23:59:59', 0, '차등지급', 20, '2022-02-15', 0);
+INSERT INTO jangdb.jang_event (TITLE, CONT, STDATE, EDDATE, PBL, EVCODE, ECOUNT, WDATE, VCNT) VALUES ('이벤트제목3', '이벤트내용3', '2022-05-01 00:00:01', '2022-06-01 23:59:59', 0, '선착순', 30, '2022-04-16', 0);
+INSERT INTO jangdb.jang_event (TITLE, CONT, STDATE, EDDATE, PBL, EVCODE, ECOUNT, WDATE, VCNT) VALUES ('이벤트제목4', '이벤트내용4', '2022-07-01 00:00:01', '2022-08-01 23:59:59', 0, '차등지급', 40, '2022-06-01', 0);
+INSERT INTO jangdb.jang_event (TITLE, CONT, STDATE, EDDATE, PBL, EVCODE, ECOUNT, WDATE, VCNT) VALUES ('이벤트제목5', '이벤트내용5', '2022-09-01 00:00:01', '2022-10-01 23:59:59', 1, '차등지급', 50, '2022-08-11', 0);
+
+-- jang_join
+INSERT INTO jangdb.jang_join (EVTNO, ID, WIN) VALUES (1, 'user1', 1);
+INSERT INTO jangdb.jang_join (EVTNO, ID, WIN) VALUES (1, 'user2', 0);
+INSERT INTO jangdb.jang_join (EVTNO, ID, WIN) VALUES (2, 'user3', 0);
+INSERT INTO jangdb.jang_join (EVTNO, ID, WIN) VALUES (3, 'user3', 0);
+INSERT INTO jangdb.jang_join (EVTNO, ID, WIN) VALUES (4, 'user4', 1);
+
+-- jang_item
+INSERT INTO jangdb.jang_item (ITMNO, NAME, CNT, EVTNO, RANK) VALUES (1, '상품1', 10, 5, 1);
+INSERT INTO jangdb.jang_item (ITMNO, NAME, CNT, EVTNO, RANK) VALUES (2, '상품2', 20, 4, 2);
+INSERT INTO jangdb.jang_item (ITMNO, NAME, CNT, EVTNO, RANK) VALUES (3, '상품3', 30, 3, 3);
+INSERT INTO jangdb.jang_item (ITMNO, NAME, CNT, EVTNO, RANK) VALUES (4, '상품4', 40, 2, 1);
+INSERT INTO jangdb.jang_item (ITMNO, NAME, CNT, EVTNO, RANK) VALUES (5, '상품5', 50, 1, 2);
+INSERT INTO jangdb.jang_item (ITMNO, NAME, CNT, EVTNO, RANK) VALUES (6, '상품6', 10, 1, 3);
+
+-- jang_event_file
+INSERT INTO jangdb.jang_event_file (ITFNO, PATH, FNAME, ITMNO) VALUES (1, '../event_file/img1.jpg', '상품이미지1', 1);
+INSERT INTO jangdb.jang_event_file (ITFNO, PATH, FNAME, ITMNO) VALUES (2, '../event_file/img2.jpg', '상품이미지2', 2);
+INSERT INTO jangdb.jang_event_file (ITFNO, PATH, FNAME, ITMNO) VALUES (3, '../event_file/img3.jpg', '상품이미지3', 3);
+INSERT INTO jangdb.jang_event_file (ITFNO, PATH, FNAME, ITMNO) VALUES (4, '../event_file/img4.jpg', '상품이미지4', 4);
+INSERT INTO jangdb.jang_event_file (ITFNO, PATH, FNAME, ITMNO) VALUES (5, '../event_file/img5.jpg', '상품이미지5', 5);
+
