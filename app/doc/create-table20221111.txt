@@ -1,3 +1,4 @@
+
 -- 전시회한줄리뷰
 DROP TABLE IF EXISTS jang_exhibition_review RESTRICT;
 
@@ -67,18 +68,18 @@ DROP TABLE IF EXISTS jang_item RESTRICT;
 -- 이벤트
 DROP TABLE IF EXISTS jang_event RESTRICT;
 
+
 -- 이동수단테이블(삭제된 테이블)
 DROP TABLE IF EXISTS jang_transportation RESTRICT;
 
 -- 전시회한줄리뷰
 CREATE TABLE jang_exhibition_review (
-  RVNO  INTEGER     NOT NULL COMMENT '리뷰번호', -- 리뷰번호
-  CONT  MEDIUMTEXT  NOT NULL COMMENT '내용', -- 내용
-  WDATE DATE        NOT NULL DEFAULT curdate() COMMENT '작성일', -- 작성일
-  ID    VARCHAR(50) NOT NULL COMMENT '아이디', -- 아이디
-  EXNO  INTEGER     NOT NULL COMMENT '전시회번호' -- 전시회번호
-)
-COMMENT '전시회한줄리뷰';
+  RVNO  INTEGER     NOT NULL, -- 리뷰번호
+  CONT  MEDIUMTEXT  NOT NULL, -- 내용
+  WDATE DATE        NOT NULL DEFAULT curdate(), -- 작성일
+  ID    VARCHAR(50) NOT NULL, -- 아이디
+  EXNO  INTEGER     NOT NULL  -- 전시회번호
+);
 
 -- 전시회한줄리뷰
 ALTER TABLE jang_exhibition_review
@@ -88,17 +89,16 @@ ALTER TABLE jang_exhibition_review
     );
 
 ALTER TABLE jang_exhibition_review
-  MODIFY COLUMN RVNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '리뷰번호';
+  MODIFY COLUMN RVNO INTEGER NOT NULL AUTO_INCREMENT;
 
 -- 알림
 CREATE TABLE jang_alarm (
-  ALNO   INTEGER     NOT NULL COMMENT '알림번호', -- 알림번호
-  ID     VARCHAR(50) NOT NULL COMMENT '아이디', -- 아이디
-  CONT   MEDIUMTEXT  NOT NULL COMMENT '내용', -- 내용
-  ALTIME DATETIME    NOT NULL COMMENT '알림시간', -- 알림시간
-  RDTIME DATETIME    NULL     COMMENT '읽은시간' -- 읽은시간
-)
-COMMENT '알림';
+  ALNO   INTEGER     NOT NULL, -- 알림번호
+  ID     VARCHAR(50) NOT NULL, -- 아이디
+  CONT   MEDIUMTEXT  NOT NULL, -- 내용
+  ALTIME DATETIME    NOT NULL, -- 알림시간
+  RDTIME DATETIME    NULL      -- 읽은시간
+);
 
 -- 알림
 ALTER TABLE jang_alarm
@@ -108,20 +108,19 @@ ALTER TABLE jang_alarm
     );
 
 ALTER TABLE jang_alarm
-  MODIFY COLUMN ALNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '알림번호';
+  MODIFY COLUMN ALNO INTEGER NOT NULL AUTO_INCREMENT;
 
 -- QnA
 CREATE TABLE jang_qna (
-  QNANO   INTEGER      NOT NULL COMMENT 'QnA번호', -- QnA번호
-  ID      VARCHAR(50)  NOT NULL COMMENT '아이디', -- 아이디
-  PBL     BOOLEAN      NOT NULL COMMENT '공개여부', -- 공개여부
-  TITLE   VARCHAR(255) NOT NULL COMMENT '제목', -- 제목
-  CONT    MEDIUMTEXT   NOT NULL COMMENT '내용', -- 내용
-  WDATE   DATE         NOT NULL DEFAULT curdate() COMMENT '작성일', -- 작성일
-  ANSCONT MEDIUMTEXT   NULL     COMMENT '답변내용', -- 답변내용
-  ANSDATE DATE         NULL     COMMENT '답변일' -- 답변일
-)
-COMMENT 'QnA';
+  QNANO   INTEGER      NOT NULL, -- QnA번호
+  ID      VARCHAR(50)  NOT NULL, -- 아이디
+  PBL     BOOLEAN      NOT NULL, -- 공개여부
+  TITLE   VARCHAR(255) NOT NULL, -- 제목
+  CONT    MEDIUMTEXT   NOT NULL, -- 내용
+  WDATE   DATE         NOT NULL DEFAULT curdate(), -- 작성일
+  ANSCONT MEDIUMTEXT   NULL,     -- 답변내용
+  ANSDATE DATE         NULL      -- 답변일
+);
 
 -- QnA
 ALTER TABLE jang_qna
@@ -131,15 +130,14 @@ ALTER TABLE jang_qna
     );
 
 ALTER TABLE jang_qna
-  MODIFY COLUMN QNANO INTEGER NOT NULL AUTO_INCREMENT COMMENT 'QnA번호';
+  MODIFY COLUMN QNANO INTEGER NOT NULL AUTO_INCREMENT;
 
 -- 검색키워드
 CREATE TABLE jang_search (
-  SKNO   INTEGER     NOT NULL COMMENT '검색키워드번호', -- 검색키워드번호
-  KWD    VARCHAR(50) NOT NULL COMMENT '키워드', -- 키워드
-  SCDATE DATE        NOT NULL DEFAULT curdate() COMMENT '검색일' -- 검색일
-)
-COMMENT '검색키워드';
+  SKNO   INTEGER     NOT NULL, -- 검색키워드번호
+  KWD    VARCHAR(50) NOT NULL, -- 키워드
+  SCDATE DATE        NOT NULL DEFAULT curdate() -- 검색일
+);
 
 -- 검색키워드
 ALTER TABLE jang_search
@@ -149,14 +147,13 @@ ALTER TABLE jang_search
     );
 
 ALTER TABLE jang_search
-  MODIFY COLUMN SKNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '검색키워드번호';
+  MODIFY COLUMN SKNO INTEGER NOT NULL AUTO_INCREMENT;
 
 -- 팔로워팔로잉
 CREATE TABLE jang_follow (
-  ID    VARCHAR(50) NOT NULL COMMENT '본인아이디', -- 본인아이디
-  OTHID VARCHAR(50) NOT NULL COMMENT '다른이아이디' -- 다른이아이디
-)
-COMMENT '팔로워팔로잉';
+  ID    VARCHAR(50) NOT NULL, -- 본인아이디
+  OTHID VARCHAR(50) NOT NULL  -- 다른이아이디
+);
 
 -- 팔로워팔로잉
 ALTER TABLE jang_follow
@@ -168,20 +165,19 @@ ALTER TABLE jang_follow
 
 -- 코스추천글
 CREATE TABLE jang_so_recommendation (
-  RECONO INTEGER      NOT NULL COMMENT '코스추천글번호', -- 코스추천글번호
-  ID     VARCHAR(50)  NOT NULL COMMENT '아이디', -- 아이디
-  TITLE  VARCHAR(255) NOT NULL COMMENT '제목', -- 제목
-  WDATE  DATE         NOT NULL DEFAULT curdate() COMMENT '등록일', -- 등록일
-  CNT    INTEGER      NOT NULL DEFAULT 0 COMMENT '조회수', -- 조회수
-  ACT    BOOLEAN      NOT NULL COMMENT '활성여부', -- 활성여부
-  PET    BOOLEAN      NULL     COMMENT '반려동물동반가능', -- 반려동물동반가능
-  FRD    BOOLEAN      NOT NULL COMMENT '친구동행추천', -- 친구동행추천
-  CPLE   BOOLEAN      NOT NULL COMMENT '연인동행추천', -- 연인동행추천
-  FMLY   BOOLEAN      NOT NULL COMMENT '가족동행추천', -- 가족동행추천
-  SOLO   BOOLEAN      NOT NULL COMMENT '혼자여행추천', -- 혼자여행추천
-  TPNAME VARCHAR(50)  NOT NULL COMMENT '이동수단명' -- 이동수단명
-)
-COMMENT '코스추천글';
+  RECONO INTEGER      NOT NULL, -- 코스추천글번호
+  ID     VARCHAR(50)  NOT NULL, -- 아이디
+  TITLE  VARCHAR(255) NOT NULL, -- 제목
+  WDATE  DATE         NOT NULL DEFAULT curdate(), -- 등록일
+  CNT    INTEGER      NOT NULL DEFAULT 0, -- 조회수
+  ACT    BOOLEAN      NOT NULL, -- 활성여부
+  PET    BOOLEAN      NULL,     -- 반려동물동반가능
+  FRD    BOOLEAN      NOT NULL, -- 친구동행추천
+  CPLE   BOOLEAN      NOT NULL, -- 연인동행추천
+  FMLY   BOOLEAN      NOT NULL, -- 가족동행추천
+  SOLO   BOOLEAN      NOT NULL, -- 혼자여행추천
+  TPNAME VARCHAR(50)  NOT NULL  -- 이동수단명
+);
 
 -- 코스추천글
 ALTER TABLE jang_so_recommendation
@@ -191,16 +187,15 @@ ALTER TABLE jang_so_recommendation
     );
 
 ALTER TABLE jang_so_recommendation
-  MODIFY COLUMN RECONO INTEGER NOT NULL AUTO_INCREMENT COMMENT '코스추천글번호';
+  MODIFY COLUMN RECONO INTEGER NOT NULL AUTO_INCREMENT;
 
 -- 장소후기첨부파일
 CREATE TABLE jang_so_review_file (
-  RECOFNO INTEGER      NOT NULL COMMENT '장소후기첨부파일번호', -- 장소후기첨부파일번호
-  PRVNO   INTEGER      NOT NULL COMMENT '장소후기번호', -- 장소후기번호
-  PATH    VARCHAR(255) NOT NULL COMMENT '파일경로', -- 파일경로
-  FNAME   VARCHAR(50)  NOT NULL COMMENT '파일명' -- 파일명
-)
-COMMENT '장소후기첨부파일';
+  RECOFNO INTEGER      NOT NULL, -- 장소후기첨부파일번호
+  PRVNO   INTEGER      NOT NULL, -- 장소후기번호
+  PATH    VARCHAR(255) NOT NULL, -- 파일경로
+  FNAME   VARCHAR(50)  NOT NULL  -- 파일명
+);
 
 -- 장소후기첨부파일
 ALTER TABLE jang_so_review_file
@@ -210,17 +205,16 @@ ALTER TABLE jang_so_review_file
     );
 
 ALTER TABLE jang_so_review_file
-  MODIFY COLUMN RECOFNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '장소후기첨부파일번호';
+  MODIFY COLUMN RECOFNO INTEGER NOT NULL AUTO_INCREMENT;
 
 -- 댓글
 CREATE TABLE jang_comment (
-  CMNO   INTEGER     NOT NULL COMMENT '댓글번호', -- 댓글번호
-  RECONO INTEGER     NOT NULL COMMENT '코스추천글번호', -- 코스추천글번호
-  ID     VARCHAR(50) NOT NULL COMMENT '아이디', -- 아이디
-  CONT   MEDIUMTEXT  NOT NULL COMMENT '댓글내용', -- 댓글내용
-  WDATE  DATE        NOT NULL DEFAULT curdate() COMMENT '댓글작성일자' -- 댓글작성일자
-)
-COMMENT '댓글';
+  CMNO   INTEGER     NOT NULL, -- 댓글번호
+  RECONO INTEGER     NOT NULL, -- 코스추천글번호
+  ID     VARCHAR(50) NOT NULL, -- 아이디
+  CONT   MEDIUMTEXT  NOT NULL, -- 댓글내용
+  WDATE  DATE        NOT NULL DEFAULT curdate() -- 댓글작성일자
+);
 
 -- 댓글
 ALTER TABLE jang_comment
@@ -230,20 +224,19 @@ ALTER TABLE jang_comment
     );
 
 ALTER TABLE jang_comment
-  MODIFY COLUMN CMNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '댓글번호';
+  MODIFY COLUMN CMNO INTEGER NOT NULL AUTO_INCREMENT;
 
 -- 장소
 CREATE TABLE jang_so (
-  PLNO     INTEGER      NOT NULL COMMENT '장소번호', -- 장소번호
-  PLNAME   VARCHAR(255) NOT NULL COMMENT '장소명', -- 장소명
-  QCALL    VARCHAR(30)  NOT NULL COMMENT '문의번호', -- 문의번호
-  POSTNO   INTEGER      NOT NULL COMMENT '우편번호', -- 우편번호
-  BASICAD  VARCHAR(255) NOT NULL COMMENT '기본주소', -- 기본주소
-  DETAILAD VARCHAR(255) NOT NULL COMMENT '상세주소', -- 상세주소
-  WIDO     VARCHAR(50)  NOT NULL COMMENT '위도', -- 위도
-  KDO      VARCHAR(50)  NOT NULL COMMENT '경도' -- 경도
-)
-COMMENT '장소';
+  PLNO     INTEGER      NOT NULL, -- 장소번호
+  PLNAME   VARCHAR(255) NOT NULL, -- 장소명
+  QCALL    VARCHAR(30)  NOT NULL, -- 문의번호
+  POSTNO   INTEGER      NOT NULL, -- 우편번호
+  BASICAD  VARCHAR(255) NOT NULL, -- 기본주소
+  DETAILAD VARCHAR(255) NOT NULL, -- 상세주소
+  WIDO     VARCHAR(50)  NOT NULL, -- 위도
+  KDO      VARCHAR(50)  NOT NULL  -- 경도
+);
 
 -- 장소
 ALTER TABLE jang_so
@@ -253,17 +246,16 @@ ALTER TABLE jang_so
     );
 
 ALTER TABLE jang_so
-  MODIFY COLUMN PLNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '장소번호';
+  MODIFY COLUMN PLNO INTEGER NOT NULL AUTO_INCREMENT;
 
 -- 공지사항
 CREATE TABLE jang_notice (
-  NTNO  INTEGER      NOT NULL COMMENT '공지사항번호', -- 공지사항번호
-  TITLE VARCHAR(255) NOT NULL COMMENT '제목', -- 제목
-  CONT  MEDIUMTEXT   NOT NULL COMMENT '내용', -- 내용
-  WDATE DATE         NOT NULL DEFAULT curdate() COMMENT '작성일', -- 작성일
-  VCNT  INTEGER      NOT NULL COMMENT '조회수' -- 조회수
-)
-COMMENT '공지사항';
+  NTNO  INTEGER      NOT NULL, -- 공지사항번호
+  TITLE VARCHAR(255) NOT NULL, -- 제목
+  CONT  MEDIUMTEXT   NOT NULL, -- 내용
+  WDATE DATE         NOT NULL DEFAULT curdate(), -- 작성일
+  VCNT  INTEGER      NOT NULL  -- 조회수
+);
 
 -- 공지사항
 ALTER TABLE jang_notice
@@ -273,20 +265,19 @@ ALTER TABLE jang_notice
     );
 
 ALTER TABLE jang_notice
-  MODIFY COLUMN NTNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '공지사항번호';
+  MODIFY COLUMN NTNO INTEGER NOT NULL AUTO_INCREMENT;
 
 -- 전시회
 CREATE TABLE jang_exhibition (
-  EXNO   INTEGER      NOT NULL COMMENT '전시회번호', -- 전시회번호
-  EXNAME VARCHAR(255) NOT NULL COMMENT '전시회명', -- 전시회명
-  CONT   MEDIUMTEXT   NOT NULL COMMENT '내용', -- 내용
-  WDATE  DATE         NOT NULL DEFAULT curdate() COMMENT '게시글등록일', -- 게시글등록일
-  PLNO   INTEGER      NOT NULL COMMENT '장소번호', -- 장소번호
-  STDATE DATE         NOT NULL COMMENT '시작일', -- 시작일
-  EDDATE DATE         NOT NULL COMMENT '종료일', -- 종료일
-  PRICE  INTEGER      NOT NULL COMMENT '판매가격' -- 판매가격
-)
-COMMENT '전시회';
+  EXNO   INTEGER      NOT NULL, -- 전시회번호
+  EXNAME VARCHAR(255) NOT NULL, -- 전시회명
+  CONT   MEDIUMTEXT   NOT NULL, -- 내용
+  WDATE  DATE         NOT NULL DEFAULT curdate(), -- 게시글등록일
+  PLNO   INTEGER      NOT NULL, -- 장소번호
+  STDATE DATE         NOT NULL, -- 시작일
+  EDDATE DATE         NOT NULL, -- 종료일
+  PRICE  INTEGER      NOT NULL  -- 판매가격
+);
 
 -- 전시회
 ALTER TABLE jang_exhibition
@@ -296,18 +287,17 @@ ALTER TABLE jang_exhibition
     );
 
 ALTER TABLE jang_exhibition
-  MODIFY COLUMN EXNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '전시회번호';
+  MODIFY COLUMN EXNO INTEGER NOT NULL AUTO_INCREMENT;
 
 -- 신고
 CREATE TABLE jang_report (
-  RPNO    INTEGER     NOT NULL COMMENT '신고번호', -- 신고번호
-  RECONO  INTEGER     NOT NULL COMMENT '코스추천글번호', -- 코스추천글번호
-  ID      VARCHAR(50) NOT NULL COMMENT '(신고자)아이디', -- (신고자)아이디
-  RSN     MEDIUMTEXT  NOT NULL COMMENT '신고사유', -- 신고사유
-  RST     MEDIUMTEXT  NULL     COMMENT '처리내용', -- 처리내용
-  RSTDATE DATE        NULL     COMMENT '처리일' -- 처리일
-)
-COMMENT '신고';
+  RPNO    INTEGER     NOT NULL, -- 신고번호
+  RECONO  INTEGER     NOT NULL, -- 코스추천글번호
+  ID      VARCHAR(50) NOT NULL, -- (신고자)아이디
+  RSN     MEDIUMTEXT  NOT NULL, -- 신고사유
+  RST     MEDIUMTEXT  NULL,     -- 처리내용
+  RSTDATE DATE        NULL      -- 처리일
+);
 
 -- 신고
 ALTER TABLE jang_report
@@ -324,16 +314,15 @@ CREATE UNIQUE INDEX UIX_jang_report
   );
 
 ALTER TABLE jang_report
-  MODIFY COLUMN RPNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '신고번호';
+  MODIFY COLUMN RPNO INTEGER NOT NULL AUTO_INCREMENT;
 
 -- 장바구니
 CREATE TABLE jang_baguni (
-  ID   VARCHAR(50) NOT NULL COMMENT '아이디', -- 아이디
-  EXNO INTEGER     NOT NULL COMMENT '전시회번호', -- 전시회번호
-  CNT  INTEGER     NOT NULL COMMENT '수량', -- 수량
-  ACT  BOOLEAN     NOT NULL COMMENT '활성여부' -- 활성여부
-)
-COMMENT '장바구니';
+  ID   VARCHAR(50) NOT NULL, -- 아이디
+  EXNO INTEGER     NOT NULL, -- 전시회번호
+  CNT  INTEGER     NOT NULL, -- 수량
+  ACT  BOOLEAN     NOT NULL  -- 활성여부
+);
 
 -- 장바구니
 ALTER TABLE jang_baguni
@@ -345,16 +334,15 @@ ALTER TABLE jang_baguni
 
 -- 전시회티켓구매
 CREATE TABLE jang_ticket (
-  EXTKNO  INTEGER     NOT NULL COMMENT '전시회티켓구매번호', -- 전시회티켓구매번호
-  ID      VARCHAR(50) NOT NULL COMMENT '아이디', -- 아이디
-  EXNO    INTEGER     NOT NULL COMMENT '전시회번호', -- 전시회번호
-  CNT     INTEGER     NOT NULL COMMENT '구매수량', -- 구매수량
-  PURDATE DATE        NOT NULL DEFAULT curdate() COMMENT '구매일', -- 구매일
-  PAYMENT VARCHAR(50) NOT NULL COMMENT '결제수단', -- 결제수단
-  CCDATE  DATE        NULL     COMMENT '취소일', -- 취소일
-  CRDATE  DATE        NULL     COMMENT '취소요청일' -- 취소요청일
-)
-COMMENT '전시회티켓구매';
+  EXTKNO  INTEGER     NOT NULL, -- 전시회티켓구매번호
+  ID      VARCHAR(50) NOT NULL, -- 아이디
+  EXNO    INTEGER     NOT NULL, -- 전시회번호
+  CNT     INTEGER     NOT NULL, -- 구매수량
+  PURDATE DATE        NOT NULL DEFAULT curdate(), -- 구매일
+  PAYMENT VARCHAR(50) NOT NULL, -- 결제수단
+  CCDATE  DATE        NULL,     -- 취소일
+  CRDATE  DATE        NULL      -- 취소요청일
+);
 
 -- 전시회티켓구매
 ALTER TABLE jang_ticket
@@ -364,16 +352,15 @@ ALTER TABLE jang_ticket
     );
 
 ALTER TABLE jang_ticket
-  MODIFY COLUMN EXTKNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '전시회티켓구매번호';
+  MODIFY COLUMN EXTKNO INTEGER NOT NULL AUTO_INCREMENT;
 
 -- 전시회첨부파일
 CREATE TABLE jang_exhibition_file (
-  EXFNO INTEGER      NOT NULL COMMENT '전시회게시글첨부파일번호', -- 전시회게시글첨부파일번호
-  PATH  VARCHAR(255) NOT NULL COMMENT '파일경로', -- 파일경로
-  EXNO  INTEGER      NOT NULL COMMENT '전시회번호', -- 전시회번호
-  FNAME VARCHAR(50)  NOT NULL COMMENT '파일명' -- 파일명
-)
-COMMENT '전시회첨부파일';
+  EXFNO INTEGER      NOT NULL, -- 전시회게시글첨부파일번호
+  PATH  VARCHAR(255) NOT NULL, -- 파일경로
+  EXNO  INTEGER      NOT NULL, -- 전시회번호
+  FNAME VARCHAR(50)  NOT NULL  -- 파일명
+);
 
 -- 전시회첨부파일
 ALTER TABLE jang_exhibition_file
@@ -383,14 +370,13 @@ ALTER TABLE jang_exhibition_file
     );
 
 ALTER TABLE jang_exhibition_file
-  MODIFY COLUMN EXFNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '전시회게시글첨부파일번호';
+  MODIFY COLUMN EXFNO INTEGER NOT NULL AUTO_INCREMENT;
 
 -- 좋아요
 CREATE TABLE jang_like (
-  RECONO INTEGER     NOT NULL COMMENT '코스추천글번호', -- 코스추천글번호
-  ID     VARCHAR(50) NOT NULL COMMENT '아이디' -- 아이디
-)
-COMMENT '좋아요';
+  RECONO INTEGER     NOT NULL, -- 코스추천글번호
+  ID     VARCHAR(50) NOT NULL  -- 아이디
+);
 
 -- 좋아요
 ALTER TABLE jang_like
@@ -402,11 +388,10 @@ ALTER TABLE jang_like
 
 -- 방문히스토리
 CREATE TABLE jang_history (
-  HNO   INTEGER     NOT NULL COMMENT '방문히스토리번호', -- 방문히스토리번호
-  HDATE DATE        NOT NULL DEFAULT curdate() COMMENT '방문날짜', -- 방문날짜
-  ID    VARCHAR(50) NOT NULL COMMENT '아이디' -- 아이디
-)
-COMMENT '방문히스토리';
+  HNO   INTEGER     NOT NULL, -- 방문히스토리번호
+  HDATE DATE        NOT NULL DEFAULT curdate(), -- 방문날짜
+  ID    VARCHAR(50) NOT NULL  -- 아이디
+);
 
 -- 방문히스토리
 ALTER TABLE jang_history
@@ -416,17 +401,16 @@ ALTER TABLE jang_history
     );
 
 ALTER TABLE jang_history
-  MODIFY COLUMN HNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '방문히스토리번호';
+  MODIFY COLUMN HNO INTEGER NOT NULL AUTO_INCREMENT;
 
 -- 장소후기
 CREATE TABLE jang_so_review (
-  PRVNO  INTEGER      NOT NULL COMMENT '장소후기번호', -- 장소후기번호
-  CONT   MEDIUMTEXT   NOT NULL COMMENT '내용', -- 내용
-  RECONO INTEGER      NOT NULL COMMENT '코스추천글번호', -- 코스추천글번호
-  PLNAME VARCHAR(255) NOT NULL COMMENT '장소명', -- 장소명
-  ADRS   VARCHAR(255) NULL     COMMENT '장소주소' -- 장소주소
-)
-COMMENT '장소후기';
+  PRVNO  INTEGER      NOT NULL, -- 장소후기번호
+  CONT   MEDIUMTEXT   NOT NULL, -- 내용
+  RECONO INTEGER      NOT NULL, -- 코스추천글번호
+  PLNAME VARCHAR(255) NOT NULL, -- 장소명
+  ADRS   VARCHAR(255) NULL      -- 장소주소
+);
 
 -- 장소후기
 ALTER TABLE jang_so_review
@@ -436,25 +420,25 @@ ALTER TABLE jang_so_review
     );
 
 ALTER TABLE jang_so_review
-  MODIFY COLUMN PRVNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '장소후기번호';
+  MODIFY COLUMN PRVNO INTEGER NOT NULL AUTO_INCREMENT;
 
 -- 회원
 CREATE TABLE jang_member (
-  ID      VARCHAR(50)  NOT NULL COMMENT '아이디', -- 아이디
-  PWD     VARCHAR(100) NOT NULL COMMENT '비밀번호', -- 비밀번호
-  NNAME   VARCHAR(50)  NOT NULL COMMENT '닉네임', -- 닉네임
-  SIDATE  DATE         NOT NULL DEFAULT curdate() COMMENT '가입일', -- 가입일
-  PROFILE VARCHAR(255) NULL     COMMENT '프로필사진', -- 프로필사진
-  NAME    VARCHAR(50)  NOT NULL COMMENT '이름', -- 이름
-  EMAIL   VARCHAR(40)  NOT NULL COMMENT '이메일', -- 이메일
-  PNUM    VARCHAR(30)  NOT NULL COMMENT '휴대폰번호', -- 휴대폰번호
-  BIRTH   DATE         NULL     COMMENT '생년월일', -- 생년월일
-  GENDER  CHAR(10)     NULL     COMMENT '성별', -- 성별
-  SNS     VARCHAR(255) NULL     COMMENT 'SNS주소', -- SNS주소
-  MBTI    VARCHAR(4)   NULL     COMMENT 'MBTI', -- MBTI
-  STATUS  VARCHAR(10)  NOT NULL DEFAULT 'A' COMMENT '계정상태' -- 계정상태
-)
-COMMENT '회원';
+  ID      VARCHAR(50)  NOT NULL, -- 아이디
+  PWD     VARCHAR(100) NOT NULL, -- 비밀번호
+  NNAME   VARCHAR(50)  NOT NULL, -- 닉네임
+  SIDATE  DATE         NOT NULL DEFAULT curdate(), -- 가입일
+  PROFILE VARCHAR(255) NULL,     -- 프로필사진
+  NAME    VARCHAR(50)  NOT NULL, -- 이름
+  EMAIL   VARCHAR(40)  NOT NULL, -- 이메일
+  PNUM    VARCHAR(30)  NOT NULL, -- 휴대폰번호
+  BIRTH   DATE         NULL,     -- 생년월일
+  GENDER  CHAR(10)     NULL,     -- 성별
+  SNS     VARCHAR(255) NULL,     -- SNS주소
+  MBTI    VARCHAR(4)   NULL,     -- MBTI
+  STATUS  VARCHAR(10)  NOT NULL DEFAULT 'A', -- 계정상태
+  OUTDATE DATE         NULL      -- 탈퇴일
+);
 
 -- 회원
 ALTER TABLE jang_member
@@ -495,12 +479,11 @@ CREATE INDEX IX_jang_member2
 
 -- 이벤트첨부파일
 CREATE TABLE jang_event_file (
-  ITFNO INTEGER      NOT NULL COMMENT '이벤트첨부파일번호', -- 이벤트첨부파일번호
-  PATH  VARCHAR(255) NULL     COMMENT '파일경로', -- 파일경로
-  FNAME VARCHAR(50)  NULL     COMMENT '파일명', -- 파일명
-  ITMNO INTEGER      NOT NULL COMMENT '이벤트상품번호' -- 이벤트상품번호
-)
-COMMENT '이벤트첨부파일';
+  ITFNO INTEGER      NOT NULL, -- 이벤트첨부파일번호
+  PATH  VARCHAR(255) NULL,     -- 파일경로
+  FNAME VARCHAR(50)  NULL,     -- 파일명
+  ITMNO INTEGER      NOT NULL  -- 이벤트상품번호
+);
 
 -- 이벤트첨부파일
 ALTER TABLE jang_event_file
@@ -510,16 +493,15 @@ ALTER TABLE jang_event_file
     );
 
 ALTER TABLE jang_event_file
-  MODIFY COLUMN ITFNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '이벤트첨부파일번호';
+  MODIFY COLUMN ITFNO INTEGER NOT NULL AUTO_INCREMENT;
 
 -- 이벤트참여
 CREATE TABLE jang_join (
-  JOINO INTEGER     NOT NULL COMMENT '이벤트참여번호', -- 이벤트참여번호
-  EVTNO INTEGER     NOT NULL COMMENT '이벤트번호', -- 이벤트번호
-  ID    VARCHAR(50) NOT NULL COMMENT '아이디', -- 아이디
-  WIN   BOOLEAN     NOT NULL COMMENT '당첨여부' -- 당첨여부
-)
-COMMENT '이벤트참여';
+  JOINO INTEGER     NOT NULL, -- 이벤트참여번호
+  EVTNO INTEGER     NOT NULL, -- 이벤트번호
+  ID    VARCHAR(50) NOT NULL, -- 아이디
+  WIN   BOOLEAN     NOT NULL  -- 당첨여부
+);
 
 -- 이벤트참여
 ALTER TABLE jang_join
@@ -529,17 +511,16 @@ ALTER TABLE jang_join
     );
 
 ALTER TABLE jang_join
-  MODIFY COLUMN JOINO INTEGER NOT NULL AUTO_INCREMENT COMMENT '이벤트참여번호';
+  MODIFY COLUMN JOINO INTEGER NOT NULL AUTO_INCREMENT;
 
 -- 이벤트상품
 CREATE TABLE jang_item (
-  ITMNO INTEGER      NOT NULL COMMENT '이벤트상품번호', -- 이벤트상품번호
-  NAME  VARCHAR(255) NOT NULL COMMENT '상품명', -- 상품명
-  CNT   INTEGER      NOT NULL COMMENT '상품재고', -- 상품재고
-  EVTNO INTEGER      NOT NULL COMMENT '이벤트번호', -- 이벤트번호
-  RANK  INTEGER      NOT NULL COMMENT '지급순위' -- 지급순위
-)
-COMMENT '이벤트상품';
+  ITMNO INTEGER      NOT NULL, -- 이벤트상품번호
+  NAME  VARCHAR(255) NOT NULL, -- 상품명
+  CNT   INTEGER      NOT NULL, -- 상품재고
+  EVTNO INTEGER      NOT NULL, -- 이벤트번호
+  RANK  INTEGER      NOT NULL  -- 지급순위
+);
 
 -- 이벤트상품
 ALTER TABLE jang_item
@@ -556,22 +537,21 @@ CREATE UNIQUE INDEX UIX_jang_item
   );
 
 ALTER TABLE jang_item
-  MODIFY COLUMN ITMNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '이벤트상품번호';
+  MODIFY COLUMN ITMNO INTEGER NOT NULL AUTO_INCREMENT;
 
 -- 이벤트
 CREATE TABLE jang_event (
-  EVTNO  INTEGER      NOT NULL COMMENT '이벤트번호', -- 이벤트번호
-  TITLE  VARCHAR(255) NOT NULL COMMENT '제목', -- 제목
-  CONT   MEDIUMTEXT   NOT NULL COMMENT '내용', -- 내용
-  STDATE DATETIME     NOT NULL COMMENT '시작일', -- 시작일
-  EDDATE DATETIME     NOT NULL COMMENT '종료일', -- 종료일
-  PBL    BOOLEAN      NOT NULL COMMENT '공개여부', -- 공개여부
-  EVCODE VARCHAR(255) NOT NULL COMMENT '구분코드', -- 구분코드
-  ECOUNT INTEGER      NOT NULL COMMENT '인원', -- 인원
-  WDATE  DATE         NOT NULL COMMENT '작성일', -- 작성일
-  VCNT   INTEGER      NOT NULL DEFAULT 0 COMMENT '조회수' -- 조회수
-)
-COMMENT '이벤트';
+  EVTNO  INTEGER      NOT NULL, -- 이벤트번호
+  TITLE  VARCHAR(255) NOT NULL, -- 제목
+  CONT   MEDIUMTEXT   NOT NULL, -- 내용
+  STDATE DATETIME     NOT NULL, -- 시작일
+  EDDATE DATETIME     NOT NULL, -- 종료일
+  PBL    BOOLEAN      NOT NULL, -- 공개여부
+  EVCODE VARCHAR(255) NOT NULL, -- 구분코드
+  ECOUNT INTEGER      NOT NULL, -- 인원
+  WDATE  DATE         NOT NULL, -- 작성일
+  VCNT   INTEGER      NOT NULL DEFAULT 0 -- 조회수
+);
 
 -- 이벤트
 ALTER TABLE jang_event
@@ -581,7 +561,7 @@ ALTER TABLE jang_event
     );
 
 ALTER TABLE jang_event
-  MODIFY COLUMN EVTNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '이벤트번호';
+  MODIFY COLUMN EVTNO INTEGER NOT NULL AUTO_INCREMENT;
 
 -- 전시회한줄리뷰
 ALTER TABLE jang_exhibition_review
