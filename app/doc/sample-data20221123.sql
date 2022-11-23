@@ -1,16 +1,16 @@
 -- jang_member
-INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, OUTDATE) VALUES ('user1', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'juser1', '2022-10-06', null, 'JANG', 'user1@test.com', '01000000000', '1996-03-24', 'F', null, 'ESTJ', NULL);
-INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, OUTDATE) VALUES ('user2', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Muser1', '2022-10-06', null, 'MIN', 'user2@test.com', '01100000000', '1996-07-26', 'M', null, 'ISFJ', NULL);
-INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, OUTDATE) VALUES ('user3', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'user3', '2022-10-10', null, 'user3', 'user3@test.com', '12345678906', '2022-10-10', 'm', null, null, NULL);
-INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, OUTDATE) VALUES ('user4', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Kimuser', '2022-09-09', null, 'HKyung', 'Kim@test.com', '01034567890', '1996-03-03', 'M', null, 'ISFJ', NULL);
-INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, OUTDATE) VALUES ('user5', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Parkuser', '2022-10-01', null, 'Mingu', 'Park@test.com', '01099999999', '1995-12-10', 'f', null, 'ISFJ', NULL);
-INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, OUTDATE) VALUES ('user6', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Uuser', '2022-10-03', null, 'Jimin', 'Uuser@test.com', '01087654321', '1994-11-10', 'm', null, 'ISFJ', NULL);
-INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, OUTDATE) VALUES ('user7', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Gooduser', '2022-10-06', null, 'Kaon', 'Gooduser@test.com', '01098765432', '1993-10-04', 'f', null, 'ISFJ', NULL);
-INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, OUTDATE) VALUES ('user8', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Baduser', '2022-10-10', null, 'Tonghyun', 'Baduser@test.com', '01009876543', '1992-10-10', 'm', null, null, NULL);
+INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OTDATE, KAKAOID) VALUES ('user1', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'juser1', '2022-10-06', null, 'JANG', 'user1@test.com', '01000000000', '1996-03-24', 'F', null, 'ESTJ', '활성', null, null);
+INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OTDATE, KAKAOID) VALUES ('user2', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Muser1', '2022-10-06', null, 'MIN', 'user2@test.com', '01100000000', '1996-07-26', 'M', null, 'ISFJ', '활성', null, null);
+INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OTDATE, KAKAOID) VALUES ('user3', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'user3', '2022-10-10', null, 'user3', 'user3@test.com', '12345678906', '2022-10-10', 'm', null, null, '활성', null, null);
+INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OTDATE, KAKAOID) VALUES ('user4', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Kimuser', '2022-09-09', null, 'HKyung', 'Kim@test.com', '01034567890', '1996-03-03', 'M', null, 'ISFJ', '신고', null, null);
+INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OTDATE, KAKAOID) VALUES ('user5', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Parkuser', '2022-10-01', null, 'Mingu', 'Park@test.com', '01099999999', '1995-12-10', 'f', null, 'ISFJ', '활성', null, null);
+INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OTDATE, KAKAOID) VALUES ('user6', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Uuser', '2022-10-03', null, 'Jimin', 'Uuser@test.com', '01087654321', '1994-11-10', 'm', null, 'ISFJ', '활성', null, null);
+INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OTDATE, KAKAOID) VALUES ('user7', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Gooduser', '2022-10-06', null, 'Kaon', 'Gooduser@test.com', '01098765432', '1993-10-04', 'f', null, 'ISFJ', '활성', null, null);
+INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OTDATE, KAKAOID) VALUES ('user8', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Baduser', '2022-10-10', null, 'Tonghyun', 'Baduser@test.com', '01009876543', '1992-10-10', 'm', null, null, '활성', null, null);
 
 -- jang_alarm
 INSERT INTO jangdb.jang_alarm (ALNO, ID, CONT, ALTIME, RDTIME) VALUES (1, 'user1', '알림1', '2022-10-06 19:40:23', null);
-INSERT INTO jangdb.jang_alarm (ALNO, ID, CONT, ALTI                             ME, RDTIME) VALUES (2, 'user2', '알림2', '2022-10-06 16:46:05', '2022-10-06 16:46:07');
+INSERT INTO jangdb.jang_alarm (ALNO, ID, CONT, ALTIME, RDTIME) VALUES (2, 'user2', '알림2', '2022-10-06 16:46:05', '2022-10-06 16:46:07');
 INSERT INTO jangdb.jang_alarm (ALNO, ID, CONT, ALTIME, RDTIME) VALUES (3, 'user1', '알림3', '2022-10-07 11:35:57', '2022-10-07 11:35:59');
 INSERT INTO jangdb.jang_alarm (ALNO, ID, CONT, ALTIME, RDTIME) VALUES (4, 'user3', '알림4', '2022-10-13 18:11:18', null);
 INSERT INTO jangdb.jang_alarm (ALNO, ID, CONT, ALTIME, RDTIME) VALUES (5, 'user3', '알림5', '2022-10-13 18:11:39', null);
@@ -102,6 +102,7 @@ INSERT INTO jangdb.jang_so_review (PRVNO, CONT, RECONO, PLNAME, ADRS) VALUES (5,
 INSERT INTO jangdb.jang_so_review (PRVNO, CONT, RECONO, PLNAME, ADRS) VALUES (6, '강원도 국가지질공원 코스는 화암 동굴! 지질명소 중 꽤 유명한 곳으로 통하고 있으며 카르스트지형으로 석회암의 용식 작용으로 만들어진 곳이다.', 4, '롯데리아6', '강남로6길');
 INSERT INTO jangdb.jang_so_review (PRVNO, CONT, RECONO, PLNAME, ADRS) VALUES (7, '화암 동굴로 향하는 모노레일을 탑승하고 정상으로 올랐다. 참고로 모노레일과 입장권을 예약할 때 할인되는 항목이 있다면 꼼꼼하게 챙기시길! 모이면 생각보다 꽤 많은 금액이 세이브되곤 한다.', 5, '롯데리아7', '강남로7길');
 
+
 -- jang_so_review_file
 INSERT INTO jangdb.jang_so_review_file (RECOFNO, PRVNO, PATH, FNAME) VALUES (1, 1, '../review_file/file1_1', '파일6');
 INSERT INTO jangdb.jang_so_review_file (RECOFNO, PRVNO, PATH, FNAME) VALUES (2, 1, '../review_file/file1_2', '파일7');
@@ -149,11 +150,11 @@ INSERT INTO jangdb.jang_event (TITLE, CONT, STDATE, EDDATE, PBL, EVCODE, ECOUNT,
 INSERT INTO jangdb.jang_event (TITLE, CONT, STDATE, EDDATE, PBL, EVCODE, ECOUNT, WDATE, VCNT) VALUES ('이벤트제목5', '이벤트내용5', '2022-09-01 00:00:01', '2022-10-01 23:59:59', 1, '차등지급', 50, '2022-08-11', 0);
 
 -- jang_join
-INSERT INTO jangdb.jang_join (EVTNO, ID, WIN) VALUES (1, 'user1', 1);
-INSERT INTO jangdb.jang_join (EVTNO, ID, WIN) VALUES (1, 'user2', 0);
-INSERT INTO jangdb.jang_join (EVTNO, ID, WIN) VALUES (2, 'user3', 0);
-INSERT INTO jangdb.jang_join (EVTNO, ID, WIN) VALUES (3, 'user3', 0);
-INSERT INTO jangdb.jang_join (EVTNO, ID, WIN) VALUES (4, 'user4', 1);
+INSERT INTO jangdb.jang_join (EVTNO, ID) VALUES (1, 'user1');
+INSERT INTO jangdb.jang_join (EVTNO, ID) VALUES (1, 'user2');
+INSERT INTO jangdb.jang_join (EVTNO, ID) VALUES (2, 'user3');
+INSERT INTO jangdb.jang_join (EVTNO, ID) VALUES (3, 'user3');
+INSERT INTO jangdb.jang_join (EVTNO, ID) VALUES (4, 'user4');
 
 -- jang_item
 INSERT INTO jangdb.jang_item (ITMNO, NAME, CNT, EVTNO, RANK) VALUES (1, '상품1', 10, 5, 1);
@@ -169,4 +170,5 @@ INSERT INTO jangdb.jang_event_file (ITFNO, PATH, FNAME, ITMNO) VALUES (2, '../ev
 INSERT INTO jangdb.jang_event_file (ITFNO, PATH, FNAME, ITMNO) VALUES (3, '../event_file/img3.jpg', '상품이미지3', 3);
 INSERT INTO jangdb.jang_event_file (ITFNO, PATH, FNAME, ITMNO) VALUES (4, '../event_file/img4.jpg', '상품이미지4', 4);
 INSERT INTO jangdb.jang_event_file (ITFNO, PATH, FNAME, ITMNO) VALUES (5, '../event_file/img5.jpg', '상품이미지5', 5);
+
 
