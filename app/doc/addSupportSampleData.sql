@@ -154,11 +154,11 @@ INSERT INTO jangdb.jang_event (TITLE, CONT, STDATE, EDDATE, PBL, EVCODE, ECOUNT,
 INSERT INTO jangdb.jang_event (TITLE, CONT, STDATE, EDDATE, PBL, EVCODE, ECOUNT, WDATE, VCNT) VALUES ('이벤트제목5', '이벤트내용5', '2022-09-01 00:00:01', '2022-10-01 23:59:59', 1, '차등지급', 50, '2022-08-11', 0);
 
 -- jang_join
-INSERT INTO jangdb.jang_join (EVTNO, ID) VALUES (1, 'user1');
-INSERT INTO jangdb.jang_join (EVTNO, ID) VALUES (1, 'user2');
-INSERT INTO jangdb.jang_join (EVTNO, ID) VALUES (2, 'user3');
-INSERT INTO jangdb.jang_join (EVTNO, ID) VALUES (3, 'user3');
-INSERT INTO jangdb.jang_join (EVTNO, ID) VALUES (4, 'user4');
+INSERT INTO jangdb.jang_join (EVTNO, ID, WIN) VALUES (1, 'user1', 1);
+INSERT INTO jangdb.jang_join (EVTNO, ID, WIN) VALUES (1, 'user2', 2);
+INSERT INTO jangdb.jang_join (EVTNO, ID, WIN) VALUES (2, 'user3', 3);
+INSERT INTO jangdb.jang_join (EVTNO, ID, WIN) VALUES (3, 'user3', 4);
+INSERT INTO jangdb.jang_join (EVTNO, ID, WIN) VALUES (4, 'user4', 5);
 
 -- jang_item
 INSERT INTO jangdb.jang_item (ITMNO, NAME, CNT, EVTNO, RANK) VALUES (1, '상품1', 10, 5, 1);

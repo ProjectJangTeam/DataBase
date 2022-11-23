@@ -1,12 +1,12 @@
 -- jang_member
-INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OTDATE, KAKAOID) VALUES ('user1', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'juser1', '2022-10-06', null, 'JANG', 'user1@test.com', '01000000000', '1996-03-24', 'F', null, 'ESTJ', '활성', null, null);
-INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OTDATE, KAKAOID) VALUES ('user2', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Muser1', '2022-10-06', null, 'MIN', 'user2@test.com', '01100000000', '1996-07-26', 'M', null, 'ISFJ', '활성', null, null);
-INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OTDATE, KAKAOID) VALUES ('user3', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'user3', '2022-10-10', null, 'user3', 'user3@test.com', '12345678906', '2022-10-10', 'm', null, null, '활성', null, null);
-INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OTDATE, KAKAOID) VALUES ('user4', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Kimuser', '2022-09-09', null, 'HKyung', 'Kim@test.com', '01034567890', '1996-03-03', 'M', null, 'ISFJ', '신고', null, null);
-INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OTDATE, KAKAOID) VALUES ('user5', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Parkuser', '2022-10-01', null, 'Mingu', 'Park@test.com', '01099999999', '1995-12-10', 'f', null, 'ISFJ', '활성', null, null);
-INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OTDATE, KAKAOID) VALUES ('user6', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Uuser', '2022-10-03', null, 'Jimin', 'Uuser@test.com', '01087654321', '1994-11-10', 'm', null, 'ISFJ', '활성', null, null);
-INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OTDATE, KAKAOID) VALUES ('user7', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Gooduser', '2022-10-06', null, 'Kaon', 'Gooduser@test.com', '01098765432', '1993-10-04', 'f', null, 'ISFJ', '활성', null, null);
-INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OTDATE, KAKAOID) VALUES ('user8', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Baduser', '2022-10-10', null, 'Tonghyun', 'Baduser@test.com', '01009876543', '1992-10-10', 'm', null, null, '활성', null, null);
+INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OUTDATE, KAKAOID) VALUES ('user1', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'juser1', '2022-10-06', null, 'JANG', 'user1@test.com', '01000000000', '1996-03-24', 'F', null, 'ESTJ', '활성', null, null);
+INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OUTDATE, KAKAOID) VALUES ('user2', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Muser1', '2022-10-06', null, 'MIN', 'user2@test.com', '01100000000', '1996-07-26', 'M', null, 'ISFJ', '활성', null, null);
+INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OUTDATE, KAKAOID) VALUES ('user3', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'user3', '2022-10-10', null, 'user3', 'user3@test.com', '12345678906', '2022-10-10', 'm', null, null, '활성', null, null);
+INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OUTDATE, KAKAOID) VALUES ('user4', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Kimuser', '2022-09-09', null, 'HKyung', 'Kim@test.com', '01034567890', '1996-03-03', 'M', null, 'ISFJ', '신고', null, null);
+INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OUTDATE, KAKAOID) VALUES ('user5', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Parkuser', '2022-10-01', null, 'Mingu', 'Park@test.com', '01099999999', '1995-12-10', 'f', null, 'ISFJ', '활성', null, null);
+INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OUTDATE, KAKAOID) VALUES ('user6', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Uuser', '2022-10-03', null, 'Jimin', 'Uuser@test.com', '01087654321', '1994-11-10', 'm', null, 'ISFJ', '활성', null, null);
+INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OUTDATE, KAKAOID) VALUES ('user7', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Gooduser', '2022-10-06', null, 'Kaon', 'Gooduser@test.com', '01098765432', '1993-10-04', 'f', null, 'ISFJ', '활성', null, null);
+INSERT INTO jangdb.jang_member (ID, PWD, NNAME, SIDATE, PROFILE, NAME, EMAIL, PNUM, BIRTH, GENDER, SNS, MBTI, STATUS, OUTDATE, KAKAOID) VALUES ('user8', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', 'Baduser', '2022-10-10', null, 'Tonghyun', 'Baduser@test.com', '01009876543', '1992-10-10', 'm', null, null, '활성', null, null);
 
 -- jang_alarm
 INSERT INTO jangdb.jang_alarm (ALNO, ID, CONT, ALTIME, RDTIME) VALUES (1, 'user1', '알림1', '2022-10-06 19:40:23', null);
@@ -150,11 +150,11 @@ INSERT INTO jangdb.jang_event (TITLE, CONT, STDATE, EDDATE, PBL, EVCODE, ECOUNT,
 INSERT INTO jangdb.jang_event (TITLE, CONT, STDATE, EDDATE, PBL, EVCODE, ECOUNT, WDATE, VCNT) VALUES ('이벤트제목5', '이벤트내용5', '2022-09-01 00:00:01', '2022-10-01 23:59:59', 1, '차등지급', 50, '2022-08-11', 0);
 
 -- jang_join
-INSERT INTO jangdb.jang_join (EVTNO, ID) VALUES (1, 'user1');
-INSERT INTO jangdb.jang_join (EVTNO, ID) VALUES (1, 'user2');
-INSERT INTO jangdb.jang_join (EVTNO, ID) VALUES (2, 'user3');
-INSERT INTO jangdb.jang_join (EVTNO, ID) VALUES (3, 'user3');
-INSERT INTO jangdb.jang_join (EVTNO, ID) VALUES (4, 'user4');
+INSERT INTO jangdb.jang_join (EVTNO, ID, WIN) VALUES (1, 'user1', 1);
+INSERT INTO jangdb.jang_join (EVTNO, ID, WIN) VALUES (1, 'user2', 2);
+INSERT INTO jangdb.jang_join (EVTNO, ID, WIN) VALUES (2, 'user3', 3);
+INSERT INTO jangdb.jang_join (EVTNO, ID, WIN) VALUES (3, 'user3', 4);
+INSERT INTO jangdb.jang_join (EVTNO, ID, WIN) VALUES (4, 'user4', 5);
 
 -- jang_item
 INSERT INTO jangdb.jang_item (ITMNO, NAME, CNT, EVTNO, RANK) VALUES (1, '상품1', 10, 5, 1);
